@@ -53,6 +53,6 @@ int PP(string str,int i,int j){
     return dp[i][j] = ans;
 }
 int palindromicPartition(string str){
-    memset(t,-1,sizeof(t));
+    memset(dp,-1,sizeof(t));
     return PP(str,0,str.length()-1);
 }
