@@ -38,9 +38,9 @@ int isPallindrome(string s,int i,int j){
 }
 int PP(string str,int i,int j){
     if(dp[i][j]!=-1)
-        return t[i][j];
+        return dp[i][j];
     if(i>=j || isPallindrome(str,i,j)){
-        t[i][j]=0;
+        dp[i][j]=0;
         return 0;
     }
     int ans = INT_MAX,temp;
