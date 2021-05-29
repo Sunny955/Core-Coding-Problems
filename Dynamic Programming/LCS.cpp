@@ -55,7 +55,7 @@ int lcsIter(int x,int y,string s1,string s2)
     {
         for(int j=1;j<=y;j++)
         {
-            if(s1[x-i]==s2[y-j])
+            if(s1[i-1]==s2[j-1])
             {
                 dp[i][j]=1+dp[i-1][j-1];
             }
