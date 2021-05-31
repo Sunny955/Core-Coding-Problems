@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void DFS(vector<int> adj[],int n,int sv,bool *visited,vector<int>& ans)
+	{
+	    ans.push_back(sv);
+        visited[sv]=true;
+        for(int i=0;i<n;i++)
+        {
+           for(auto i:adj[sv])
+           {
+               if(visited[i]==false)
+               {
+                   DFS(adj,n,i,visited,ans);
+               }
+           }
+        }
+	}
+	vector<int>dfsOfGraph(int V, vector<int> adj[])
+	{
+	    bool *visited = new bool[V];
+	    for(int i=0;i<V;i++)
+	    {
+	        visited[i]=false;
+	    }
+	    vector<int> ans;
+	    DFS(adj,V,0,visited,ans);
+	    return ans;
+	}
